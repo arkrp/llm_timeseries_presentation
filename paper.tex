@@ -44,6 +44,7 @@
     \frametitle{Overview}
     \shiftleft{
         \begin{itemize}
+            \item The Point
             \item The Transformer
             \item Time Series Prediction
             \item The Appeal of Transformers
@@ -54,6 +55,7 @@
                 \end{itemize}
             \item TimeLLM
             \item Further exploration
+            \item Summary
         \end{itemize}
     }
 \end{frame}
@@ -99,7 +101,7 @@
     \vspace{1em}
     \includegraphics[totalheight=4cm]{resources/llm_time_stock.png}
     \includegraphics[totalheight=4cm]{resources/llm_time_power.png}
-    \cite{gruver2024largelanguagemodelszeroshot}
+    \footnote{\textcite{gruver2024largelanguagemodelszeroshot}}
 \end{frame}
 %section-end
 %section-start Appeal: Implicit Prior
@@ -113,31 +115,46 @@
 %section-start Appeal: Multi-Modality
 \begin{frame}
     \frametitle{Appeal: Multi-Modality}
-\end{frame}
-%section-end
-%section-start Appeal: Other
-\begin{frame}
-    \frametitle{Appeal: Other}
-    \begin{itemize}
-        \item Generalization
-        \item Semantic Input Structure
-        \item Data Efficiency \textcite{zhang2024largelanguagemodelstime}
-    \end{itemize}
+    Transformer based models show excelent multi-modal capability\vspace{1em}
+    \includegraphics[totalheight=5.5cm]{resources/multi_modality_example.png}
+    \footnote{\textcite{openai_chatgpt_2026}}
+    %TODO cite chatgpt for the text response
 \end{frame}
 %section-end
 %section-start Time-LLM
 \begin{frame}
     \frametitle{Time-LLM}
     \includegraphics[totalheight=7cm]{resources/time_llm.png}
-    \cite{jin2024timellmtimeseriesforecasting}
+    \footnote{\textcite{jin2024timellmtimeseriesforecasting}}
+\end{frame}
+%section-end
+%section-start Time-LLM Perspective
+\begin{frame}
+    \frametitle{Time-LLM Perspective}
+    \begin{itemize}
+        \item{The prompt is the prefix}
+        \item{Train the translation layer}
+        \item{Do Not Autoregress Tokens}
+        \item{Patch Linearly}
+    \end{itemize}
+\end{frame}
+%section-end
+%section-start Alternate Perspectives
+\begin{frame}
+    \frametitle{Alternate Perspectives}
+    \begin{itemize}
+        \item{Autoregress in plain text} \footnote{\textcite{gruver2024largelanguagemodelszeroshot}}
+        \item{Autoregress in patch tokens} \footnote{\textcite{ansari2024chronoslearninglanguagetime}}
+        \item{Positionally encode input} \footnote{\textcite{rasul2024lagllamafoundationmodelsprobabilistic}}
+    \end{itemize}
 \end{frame}
 %section-end
 %section-start Future Plans
 \begin{frame}
     \frametitle{Future Research}
-    Non Uniform Time Series Input
-    Missing Data Tolerance
-    Alternate Modality Encoding
+    Non-uniform time-series
+    Tokenization based models
+    Parameter Efficient Fine Tuning
 \end{frame}
 %section-end
 %What are the existing methods
