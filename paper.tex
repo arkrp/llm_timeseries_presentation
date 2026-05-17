@@ -44,35 +44,45 @@
     \frametitle{Overview}
     \shiftleft{
         \begin{itemize}
-            \item The Point
             \item The Transformer
             \item Time Series Prediction
             \item The Appeal of Transformers
                 \begin{itemize}
                     \item Heterogeneity
-                    \item Implicit Prior
                     \item Multi-Modality
+                    \item Implicit Prior
                 \end{itemize}
             \item TimeLLM
             \item Further exploration
-            \item Summary
         \end{itemize}
     }
 \end{frame}
 %section-end
-    %Autoregressive Token based Models
-%section-start The Transformer?
+%section-start Out data domain: Time Series
+%section-start Time Series
+\begin{frame}
+    \frametitle{Time Series}
+    \includegraphics[totalheight=6cm]{resources/example_time_series_graph.png}
+    \footnote{\textcite{forecast}}
+\end{frame}
+%section-end
+%section-start Time Series: Further Complexity
+\begin{frame}
+    \frametitle{Time Series: Further Complexity}
+    \begin{itemize}
+        \item Heterogeneity
+        \item Multi-resolution
+    \end{itemize}
+\end{frame}
+%section-end
+%section-end
+%section-start Transformers, what and why
+%section-start The Transformer
 \begin{frame}
     \frametitle{The Transformer}
     \includegraphics[totalheight=7cm]{resources/autoregressive_transformer.png}
 \end{frame}
 %section-end
-%Why LLM Timeseries
-    %Meta learning is herogeneious prediction
-    %Captures long distance relations
-    %Nonparametric flexibility
-    %Transfer learning, Fine tune gives highly informative implicit prior
-    %flexible spatialy dependent 
 %section-start The Appeal of Transformers
 \begin{frame}
     \frametitle{The Appeal of Transformers}
@@ -89,7 +99,6 @@
 \begin{frame}
     \frametitle{Appeal: Heterogeneity}
     Transformers can capture distinct sequence types.\\
-    % #TODO show two different languages.
     \shiftleft{
         \begin{itemize}
             \item[German] Die Katze schläft auf dem Sofa.
@@ -98,18 +107,11 @@
     }
     \vspace{1em}
     This directly corresponds to sequence heterogeneity.
+
     \vspace{1em}
     \includegraphics[totalheight=4cm]{resources/llm_time_stock.png}
     \includegraphics[totalheight=4cm]{resources/llm_time_power.png}
     \footnote{\textcite{gruver2024largelanguagemodelszeroshot}}
-\end{frame}
-%section-end
-%section-start Appeal: Implicit Prior
-\begin{frame}
-    \frametitle{Appeal: Implicit Prior}
-    \textbf{Foundation Models} are models pretrained on many datasets\\
-    \textbf{Foundation Models} are \textit{fine tuned} into \textbf{Task Specific Models}\\
-    \textbf{Tasks Specific Models} are implictly conditioned on external data.
 \end{frame}
 %section-end
 %section-start Appeal: Multi-Modality
@@ -121,6 +123,22 @@
     %TODO cite chatgpt for the text response
 \end{frame}
 %section-end
+%section-start Appeal: Implicit Prior
+\begin{frame}
+    \frametitle{Appeal: Implicit Prior}
+    \textbf{Foundation Models} are models pretrained on many datasets\\
+    \textbf{Foundation Models} are \textit{fine tuned} into \textbf{Task Specific Models}\\
+    \textbf{Tasks Specific Models} are implictly conditioned on external data.
+
+    \vspace{1em}
+
+    \includegraphics[totalheight=2.2cm]{resources/finetune.png}
+
+    This lets us regularize models with data!
+\end{frame}
+%section-end
+%section-end
+%section-start Time LLM compare and contrast
 %section-start Time-LLM
 \begin{frame}
     \frametitle{Time-LLM}
@@ -149,25 +167,32 @@
     \end{itemize}
 \end{frame}
 %section-end
-%section-start Future Plans
-\begin{frame}
-    \frametitle{Future Research}
-    Non-uniform time-series
-    Tokenization based models
-    Parameter Efficient Fine Tuning
-\end{frame}
 %section-end
-%What are the existing methods
-    %LLM TIME - Zero shot super text based
-    %TIME LLM - Reprogramming layer
-    %Lag-Llama - Makes a foundation model for time series specifically. Then fine tunes this modelf or even better performance. Applies the transfer learning idea to time series models.
-%what potential research can there be?
-%
-%section-start Citations
+%section-start Next Steps
 \begin{frame}
+    \frametitle{Next Steps}
+    \begin{itemize}
+        \item Alternate modeling perspectives
+        \item How to apply patching to multi-resolution data?
+        \item The modern transformer (GQA, MoE)
+    \end{itemize}
+    \end{frame}
+%section-end
+%section-start Citations
+\begin{frame}[allowframebreaks]
 \frametitle{Citations}
     \printbibliography
 \end{frame}
+%section-end
+%section-start Ending Summary
+\begin{frame}
+    \frametitle{Summary}
+    \begin{itemize}
+        \item Transformers have good qualities for time-series
+        \item Time-LLM demonstrates the basic capability
+        \item Next steps will analyze alternate approaches for multi-resolution time-series data
+    \end{itemize}
+    \end{frame}
 %section-end
 \end{document}
 %section-end
